@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>Check-In</title>
+    <title>History</title>
 
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
     <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Daterange picker -->
-    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="../dist/css/adminlte.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -82,7 +82,7 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="dist/img/yaz.png" class="img-circle elevation-2" alt="User Image">
+                        <img src="../dist/img/yaz.png" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">Yazan AMIN</a>
@@ -96,7 +96,7 @@
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="student.html" class="nav-link">
+                            <a href="summary.html" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Attendance-summary
@@ -112,29 +112,36 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="check-in.html" class="nav-link">
-                                <i class="nav-icon far fa-check-square"></i>
-                                <p>
-                                    check-in
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/widgets.html" class="nav-link">
-                                <i class="nav-icon fas fa-question"></i>
-                                <p>
-                                    inform-prof
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/calendar.html" class="nav-link">
+                            <a href="calendar.html" class="nav-link">
                                 <i class="nav-icon fas fa-calendar-alt"></i>
                                 <p>
                                     Calendar
                                     <!-- <span class="badge badge-info right">2</span> -->
                                 </p>
                             </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                              <i class="nav-icon fas fa-sliders-h"></i>
+                              <p>
+                                Config
+                                <i class="right fas fa-angle-left"></i>
+                              </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                              <li class="nav-item">
+                                <a href="student.html" class="nav-link">
+                                  <i class="far fa-circle nav-icon"></i>
+                                  <p>Student</p>
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a href="prof.html" class="nav-link">
+                                  <i class="far fa-circle nav-icon"></i>
+                                  <p>Prof</p>
+                                </a>
+                              </li>
+                            </ul>
                         </li>
                     </ul>
                 </nav>
@@ -150,13 +157,13 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0 text-dark">check-in</h1>
+                            <h1 class="m-0 text-dark">History</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href='student.html'>Home</a></li>
                                 
-                                <li class="breadcrumb-item active">check-in</li>
+                                <li class="breadcrumb-item"><a href='student.html'>Home</a></li>
+                                <li class="breadcrumb-item active">History</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -167,24 +174,32 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
-                            <form role="form">
-                                <div class="card-body">
-                                  <span class="font-weight-bold">Date: 20/04/2020</span>
-                                  <div class="form-group">
-                                    <label>Cours</label>
-                                    <select class="form-control">
-                                    <option>JS</option>
-                                    <option>React</option>
-                                    <option>Leap motion</option>
-                                    <option>WebGL</option>
-                                    <option>HTML</option>
-                                    </select>   
-                                  </div>
-                                <!-- /.card-body -->
-                                <div class="card-footer">
-                                  <button type="submit" class="btn btn-primary">check-in</button>
-                                </div>
-                              </form>
+                            <table class="table table-striped">
+
+                            <thead>
+                                <tr>
+                                    <th>time</th>
+                                    <th>cours</th>
+                                    <th>prof</th>
+                                    <th>presance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td>04/01/19 14:30</td>
+                                    <td>JS</td>
+                                    <td>george</td>
+                                    <td><span class="badge bg-success">Yes</span></td>
+                                </tr>
+                                <tr>
+                                    <td>04/02/18 14:40</td>
+                                    <td>JS</td>
+                                    <td>Frank</td>
+                                    <td><span class="badge bg-danger">No</span></td>
+                                </tr>
+                            </tbody>
+                            </table>
 
                             <!-- /.card -->
                         </div>
@@ -219,33 +234,28 @@
 
     <!-- REQUIRED SCRIPTS -->
     <!-- jQuery -->
-    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="../plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap -->
-    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- overlayScrollbars -->
-    <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <!-- jQuery Knob Chart -->
-    <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+    <script src="../plugins/jquery-knob/jquery.knob.min.js"></script>
     <!-- daterangepicker -->
-    <script src="plugins/moment/moment.min.js"></script>
-    <script src="plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="../plugins/moment/moment.min.js"></script>
+    <script src="../plugins/daterangepicker/daterangepicker.js"></script>
     <!-- AdminLTE App -->
-    <script src="dist/js/adminlte.js"></script>
+    <script src="../dist/js/adminlte.js"></script>
 
     <!-- OPTIONAL SCRIPTS -->
-    <script src="dist/js/demo.js"></script>
+    <script src="../dist/js/demo.js"></script>
 
     <!-- PAGE PLUGINS -->
     <!-- jQuery Mapael -->
-    <script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
-    <script src="plugins/raphael/raphael.min.js"></script>
-    <script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
-    <script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
-    <!-- ChartJS -->
-    <script src="plugins/chart.js/Chart.min.js"></script>
-
-    <!-- PAGE SCRIPTS -->
-    <script src="dist/js/pages/dashboard.js"></script>
+    <script src="../plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+    <script src="../plugins/raphael/raphael.min.js"></script>
+    <script src="../plugins/jquery-mapael/jquery.mapael.min.js"></script>
+    <script src="../plugins/jquery-mapael/maps/usa_states.min.js"></script>
 </body>
 
 </html>
