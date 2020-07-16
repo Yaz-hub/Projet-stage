@@ -18,27 +18,35 @@ function emailPasswordLogin(event) {
 
     const email = $('#emailField').val();
     const password = $('#passwordField').val();
-const db = firebase.collections;
-const user = db.collection('users').where('email', '==', email );
-console.log(user);
-
-    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-      if (error) {
-        console.log(error);
-      } else {
+console.log('hello')
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .then(function(result) {
+        // result.user.tenantId should be ‘TENANT_PROJECT_ID’.
         console.log('welcome');
-        firebase.database().ref('users').orderByChild('email').equalTo(email)
-          .once('value')
-          .then(snapshot => {
-            const records = snapshot.val();
-            console.log(records);
-          })
-          .catch(error => console.log(error));
+        firebase.database().ref('users').limitToFirst(1).orderByChild('email').equalTo(email).on('value', function(snapshot) {
+            snapshot.forEach(function(item) {
+              const user = item.val();
+              const type =  `${user.type}`;
+              console.log(type);
+              if (type=="student") {
+                window.location.href = 'public/student/history.html';
+              }
+              else if (type=="prof"){
+                
+               window.location.href = 'public/prof/prof.html';
+              }
+              else {
+              window.location.href = 'public/Admin/summary.html';
 
-//      window.location.href = '/public/student/summary.html';
-//      window.location.href = '/public/prof/summary.html';
+              }
+              console.log(user);
+              console.log( `${user.type} `);
+            });
+        })
+
+//     
 //      window.location.href = '/public/Admin/summary.html';
-    }
-      
-    });
+      }).catch(function(error) {
+        console.log(error);
+      });
 }
