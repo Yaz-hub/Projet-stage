@@ -1,0 +1,14 @@
+https://github.com/Yaz-hub/Projet-stage
+
+
+
+fonctionnalités réalisées:
+- administrateur
+- liste des étudiants (ajouter, supprimer)
+- liste des utilisateurs (ajouter, supprimer)
+- liste des prof (ajouter, supprimer)
+
+reste à faire:
+- prof: générer du code
+- étudiant: check-in, inform-prof
+- connexion: commencé non terminé
